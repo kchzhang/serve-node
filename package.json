@@ -1,0 +1,21 @@
+{
+  "name": "serve-node",
+  "version": "1.0.0",
+  "description": "node",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx webpack --config webpack.dev.config.js && npm run serve",
+    "serve": "node ./dist/main.js",
+    "build": "npx webpack --config webpack.pro.config.js",
+    "watch": "webpack --watch --mode=development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "clean-webpack-plugin": "^0.1.16"
+  },
+  "dependencies": {}
+}
