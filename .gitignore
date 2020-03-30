@@ -1,4 +1,15 @@
+logs/
+npm-debug.log
+yarn-error.log
+node_modules/
+package-lock.json
+yarn.lock
+coverage/
+.idea/
+run/
 .DS_Store
-dist
-node_modules
+*.sw*
+*.un~
+typings/
+.nyc_output/
 package-lock.json

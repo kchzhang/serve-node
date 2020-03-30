@@ -1,21 +1,46 @@
 {
   "name": "serve-node",
   "version": "1.0.0",
-  "description": "node",
-  "main": "index.js",
-  "scripts": {
-    "dev": "npx webpack --config webpack.dev.config.js && npm run serve",
-    "serve": "node ./dist/main.js",
-    "build": "npx webpack --config webpack.pro.config.js",
-    "watch": "webpack --watch --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
   },
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.15.1",
+    "egg-scripts": "^2.11.0"
+  },
   "devDependencies": {
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "clean-webpack-plugin": "^0.1.16"
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0"
   },
-  "dependencies": {}
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-serve-node",
+    "stop": "egg-scripts stop --title=egg-server-serve-node",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "knox.zhang",
+  "license": "MIT"
 }
