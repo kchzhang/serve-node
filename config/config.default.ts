@@ -15,6 +15,21 @@ export default (appInfo: EggAppInfo) => {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
   };
 
+  config.jwt = {
+    secret: "qwerty!@#$%^",//自定义 token 的加密条件字符串
+  };
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true
+    },
+    domainWhiteList: ['http://localhost:8080'],//允许访问接口的白名单
+  };
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+  };
+
   // the return config will combines to EggAppConfig
   return {
     ...config,
